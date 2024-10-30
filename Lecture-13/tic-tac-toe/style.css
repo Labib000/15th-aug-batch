@@ -83,5 +83,34 @@
     width: calc(var(--mark-size)*0.7);
 }
 
+.x , .circle{
+    cursor: not-allowed;
+}
 
 
+.winnner-message{
+    position: fixed;
+    display: none;
+    top: 0; right: 0; bottom:  0; left:0;
+    background-color: rgba(0,0,0,0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.3rem;
+    color: white;
+    gap: 10px;
+}
+
+
+.winnner-message button{
+    font-size: 2rem;
+    background-color: white;
+    border: 2pc solid black;
+    cursor: pointer;
+    padding: .25em  0.5em;
+}
+
+
+.winnner-message.show{
+    display: flex;
+}
