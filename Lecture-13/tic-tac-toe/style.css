@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cell-size : 100px;
+    --mark-size : calc(var(--cell-size)*0.9)
+}
+
+.board{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(3 , auto);
+    justify-content: center;
+    align-content: center;
+    gap: 0;
+}
+
+.cell{
+    border: 1px solid black;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: relative;
+}
+
+.cell:first-child , .cell:nth-of-type(2) , .cell:nth-of-type(3){
+    border-top: none ;
+}
+
+.cell:nth-of-type(3n+1){
+    border-left: none ;
+}
+.cell:nth-of-type(3n+3){
+    border-right: none ;
+}
+.cell:nth-of-type(7),.cell:nth-of-type(8),.cell:last-child{
+    border-bottom: none ;
+}
+
+/* x */
+
+.x::before , .x::after{
+    content: " ";
+    height: var(--mark-size) ;
+    width: calc(var(--mark-size) * .2);
+    background-color: black ;
+    position: absolute;
+    top:7%;
+    right:46%;
+    color: black;
+}
+
+.x::before{
+    transform: rotate(45deg);
+}
+
+.x::after{
+    transform: rotate(-45deg);
+}
+
+/* ---- */
+/* circle */
+
+.circle::before,
+.circle::after{
+    content: " ";
+    height: var(--mark-size);
+    width: var(--mark-size);
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    top: 5%;
+    right: 5%;
+}
+
+.circle::after{
+    background-color: white;
+    top: 19%;
+    right: 19%;
+    height: calc(var(--mark-size)*0.7);
+    width: calc(var(--mark-size)*0.7);
+}
+
+
+
